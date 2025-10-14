@@ -6,7 +6,6 @@
 поставить node.js - https://nodejs.org/en
 Крэш курс по гиту - https://www.youtube.com/playlist?list=PLDyvV36pndZEgSRzWGuXFrTRUFuAAMciE
 
-
 ДЗ - 2
 поставить расширение prettier https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode и форматировать свой код. В vs code можно настроить прогон на сохранения файла
 создать ветку для ДЗ - hw-2

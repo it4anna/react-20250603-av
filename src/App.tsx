@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-     <h1>React 2025</h1>
+      <h1>React 2025</h1>
     </>
   )
 }
