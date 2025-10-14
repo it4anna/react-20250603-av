@@ -1,4 +1,4 @@
-export const restaurants = [
+export const restaurants : any[] = [
   {
     id: "a757a0e9-03c1-4a2a-b384-8ac21dbe2fb2",
     name: "Dishoom",
@@ -138,5 +138,5 @@ export const restaurants = [
         rating: 5,
       },
     ],
-  },
-];
+  }
+]
