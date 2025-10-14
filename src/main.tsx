@@ -1,44 +1,56 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { restaurants } from './materials/mock-restaurants'
+import './main.css'
 
-type MenuType = {
+interface MenuProps {
   id: String
   name: String
   price: Number
   ingredients: [String]
 }
-type ReviewType = {
+interface ReviewProps {
   id: String
   user: String
   text: String
   rating: Number
 }
-type RestaurantType = {
+interface RestaurantProps {
   id: String
   name: String
-  menu: [MenuType]
-  reviews: [ReviewType]
+  menu: [MenuProps]
+  reviews: [ReviewProps]
 }
 
-const Menu = ({ data }: { MenuType }) => {
-  return (
-    <li>
-      <h4>{`${data.name}- ${data.price}`}</h4>
-      <p>{data.ingredients.toString()}</p>
-    </li>
-  )
-}
-const Review = ({ data }: { ReviewType }) => {
-  return (
-    <li>
-      <h4>{'*'.repeat(10 - data.rating)}</h4>
-      <p>{data.text}</p>
-    </li>
-  )
-}
-const Restaurant = ({ data }: { RestaurantType }) => {
-  const { name, menu, reviews } = data
+const Menu: React.FC<MenuProps> = ({menuItem}) => (
+  <li>
+    <h4>{`${menuItem.name}- ${menuItem.price}`}</h4>
+    <p>{menuItem.ingredients.toString()}</p>
+  </li>
+)
+const StarFilled = () => <span>&#9733;</span>
+const StarEmpty = () => <span>&#9734;</span>
+const Review: React.FC<ReviewProps> = ({review}) => (<li>
+    <div className='review-header'>
+      <h4>{review.user}</h4>
+      <h4>
+        {
+          Array(review.rating)
+          .fill('')
+          .map((_, index) => <StarFilled key={index} />)
+        }
+        {
+          Array(10-review.rating)
+          .fill('')
+          .map((_, index) => <StarEmpty key={index} />)
+        }
+        </h4>
+    </div>
+      <p>{review.text}</p>
+  </li>
+)
+const Restaurant: React.FC<RestaurantProps> = ({restaurant}) => {
+  const { name, menu, reviews } = restaurant
   return (
     <>
       <h2>{name}</h2>
@@ -46,7 +58,7 @@ const Restaurant = ({ data }: { RestaurantType }) => {
         <h3>Menu:</h3>
         <ul>
           {menu.map((menuItem) => (
-            <Menu data={menuItem} key={menuItem.id} />
+            <Menu menuItem={menuItem} key={menuItem.id} />
           ))}
         </ul>
       </div>
@@ -55,7 +67,7 @@ const Restaurant = ({ data }: { RestaurantType }) => {
         {
           <ul>
             {reviews.map((review) => (
-              <Review data={review} key={review.id} />
+              <Review review={review} key={review.id} />
             ))}
           </ul>
         }
@@ -68,7 +80,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <h1>Restaurants:</h1>
     {restaurants.map((restaurant) => (
-      <Restaurant data={restaurant} key={restaurant.id} />
+      <Restaurant restaurant={restaurant} key={restaurant.id} />
     ))}
   </StrictMode>,
 )
