@@ -1,7 +1,14 @@
+#root {
+  margin: 40px;
+}
+footer {
+  display: flex;
+  align-content: center;
+}
 .header {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  margin: 0 10px 0
 }
 li {
   list-style-type: none;
@@ -9,7 +16,6 @@ li {
 .dish-buttons {
   display: flex;
   justify-content: flex-end;
-  padding: 0 0 20px;
 }
 .button,
 .resarant-tab,
