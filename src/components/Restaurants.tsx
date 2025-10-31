@@ -1,13 +1,13 @@
 import {useState} from 'react'
 import {FIRST_REST_ID, RESTAURANTS} from '../utils/constants'
 import {getItemById} from '../utils/helpers'
-import {RestaurantTabs, Restaurant} from './'
+import {RestaurantButtons, Restaurant} from './'
 
 export const Restaurants = () => {
-  const [id, setId] = useState(FIRST_REST_ID);
+  const [activeRestaurantId, setActiveRestaurantId] = useState(FIRST_REST_ID);
   return (
   <>
-    <RestaurantTabs activeId={id} onClick={setId} />
-    <Restaurant {...getItemById(id, RESTAURANTS)} key={id} />
+    <RestaurantButtons activeId={activeRestaurantId} onClick={setActiveRestaurantId} />
+    <Restaurant {...getItemById(activeRestaurantId, RESTAURANTS)} key={activeRestaurantId} />
   </>
 )}
