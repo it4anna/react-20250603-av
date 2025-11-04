@@ -2,7 +2,7 @@ export interface MenuLiProps {
     id: string
     name: string
     price: any
-    ingredients: [string]
+    ingredients: string[]
     key: string
 }
 export interface ReviewProps {
@@ -13,16 +13,16 @@ export interface ReviewProps {
   key: string
 }
 export interface MenuProps {
-  menu: [MenuLiProps]
+  menu: MenuLiProps[]
 }
 export interface ReviewsProps {
-  reviews: [ReviewProps]
+  reviews: ReviewProps[]
 }
 export interface RestaurantProps {
   id: string
   name: string
-  menu: [MenuLiProps]
-  reviews: [ReviewProps]
+  menu: MenuLiProps[]
+  reviews: ReviewProps[]
   key: string
 }
 export interface RestaurantTabsProps {
