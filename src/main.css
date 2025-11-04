@@ -1,8 +1,53 @@
-.review-header {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
+#root {
+  margin: 40px;
+}
+footer {
+  display: flex;
+  align-content: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px 0
 }
 li {
-    list-style-type: none;
+  list-style-type: none;
+}
+.dish-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.button,
+.resarant-tab,
+.active-resarant-tab {
+  cursor: pointer;
+}
+.resarant-tab,
+.active-resarant-tab {
+  display: inline-flex;
+  justify-content: space-between;
+  width:200px;
+  margin: 5px;
+  color:rgb(73, 72, 72);
+  cursor: pointer;
+  border: solid 2px grey;
+  box-shadow: 4px 4px 5px -2px rgba(0, 0, 0, 0.5);
+  transition: border 2s, background-color 1s, color 2s;
+}
+.active-resarant-tab {
+  border: solid 2px rgb(70, 69, 69);
+  background-color: grey;
+  color: white;
+}
+.resarant-tab:hover,
+.active-resarant-tab:hover {
+  border: solid 2px rgb(73, 72, 72);
+  box-shadow: 6px 6px 7px -2px rgba(0, 0, 0, 0.5);
+}
+.resarant-tab:hover {
+  background-color: rgb(204 204 204);
+}
+.button {
+  width: 70px;
+  margin: 0 10px 0
 }
