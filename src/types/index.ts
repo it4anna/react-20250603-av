@@ -30,6 +30,20 @@ export interface RestaurantTabsProps {
   onClick: any
 }
 export interface ButtonProps {
+  className?: string
   value: string
   onClick: any
+  isEnable?: boolean
+}
+export interface CounterProps {
+  name?: string
+  value?: number
+  onChange?: any
+}
+export interface ReviewFormProps {
+ value?: number
+}
+export interface actionProps {
+  type: string
+  payload?: object
 }

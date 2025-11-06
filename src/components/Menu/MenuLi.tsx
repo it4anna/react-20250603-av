@@ -1,6 +1,6 @@
 import {type MenuLiProps} from '../../types'
 import { toCapitalize } from '../../utils/helpers'
-import {MenuLiQuantityBar} from './MenuLiQuantityBar'
+import {Counter} from '../'
 
 export const MenuLi = ({name, price, ingredients}: MenuLiProps) => (
   <li>
@@ -9,6 +9,6 @@ export const MenuLi = ({name, price, ingredients}: MenuLiProps) => (
       <h4>{price}</h4>
     </div>
     <p>{toCapitalize(ingredients)}</p>
-    <MenuLiQuantityBar />
+    <Counter />
   </li>
 )
