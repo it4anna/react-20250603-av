@@ -1,9 +1,9 @@
 export interface MenuLiProps {
-    id: string
-    name: string
-    price: any
-    ingredients: string[]
-    key: string
+  id: string
+  name: string
+  price: any
+  ingredients: string[]
+  key: string
 }
 export interface ReviewProps {
   id: string
@@ -35,13 +35,18 @@ export interface ButtonProps {
   onClick: any
   isEnable?: boolean
 }
-export interface CounterProps {
+export interface MenuLiCounterProps {
   name?: string
   value?: number
   onChange?: any
 }
+export interface CounterProps {
+  count: number
+  increase: any
+  decrease: any
+}
 export interface ReviewFormProps {
- value?: number
+  value?: number
 }
 export interface actionProps {
   type: string

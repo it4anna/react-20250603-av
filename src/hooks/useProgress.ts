@@ -1,24 +1,24 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 
 const getNewPercents = () => {
-    const bodyHeight = document.body.scrollHeight - window.innerHeight
-    const scrollY = window.scrollY
+  const bodyHeight = document.body.scrollHeight - window.innerHeight
+  const scrollY = window.scrollY
 
-    return `${scrollY/bodyHeight*100}%` 
+  return `${(scrollY / bodyHeight) * 100}%`
 }
 
 export const useProgress = () => {
-    const [percents, setPercents] = useState('0%')
+  const [percents, setPercents] = useState('0%')
 
-    const onScroll = () => {
-        setPercents(getNewPercents())
-    }
+  const onScroll = () => {
+    setPercents(getNewPercents())
+  }
 
-    useEffect(() => {
-        window.addEventListener('scroll', onScroll)
-        
-        return () => window.removeEventListener('scroll', onScroll)
-    }, [])
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll)
 
-    return percents
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return percents
 }

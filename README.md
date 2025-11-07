@@ -44,13 +44,11 @@
 реализовать scroll progress - https://www.cssscript.com/demo/scroll-progress-bar/
 https://react.dev/learn/preserving-and-resetting-state прочитать статью
 
-
 ДЗ - 5
 стилизовать приложение, используя css модули (в свободном формате, на ваше усмотрение). Еще раз подумать над разбивкой UI по отдельным компонентам (ресторан, меню, блюдо, отзыв и тд)
 для удобства предлагается использовать библиотеку classnames, чтобы подключать условно несколько классов - https://www.npmjs.com/package/classnames
 подключить корневой css файл, чтобы почистить ненужные стили
 расширение для удобства работы с css модулями - https://marketplace.visualstudio.com/items?itemName=clinyong.vscode-css-modules
-
 
 # React + TypeScript + Vite
 
