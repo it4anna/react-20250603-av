@@ -1,6 +1,5 @@
 import { Layout } from './Layout'
 import { Menu } from './Menu'
-import { Button } from './Button'
 import { Counter } from './Counter'
 import { MenuLi } from './Menu/MenuLi'
 import { MenuLiCounter } from './Menu/MenuLiCounter'
@@ -14,7 +13,6 @@ export {
   Menu,
   MenuLi,
   MenuLiCounter,
-  Button,
   Counter,
   Restaurants,
   Reviews,

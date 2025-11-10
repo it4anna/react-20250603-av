@@ -29,12 +29,6 @@ export interface RestaurantTabsProps {
   activeId: string
   onClick: any
 }
-export interface ButtonProps {
-  className?: string
-  value: string
-  onClick: any
-  isEnable?: boolean
-}
 export interface MenuLiCounterProps {
   name?: string
   value?: number
@@ -44,11 +38,13 @@ export interface CounterProps {
   count: number
   increase: any
   decrease: any
+  max?: number
+  min?: number
 }
 export interface ReviewFormProps {
   value?: number
 }
 export interface actionProps {
   type: string
-  payload?: object
+  payload?: string
 }

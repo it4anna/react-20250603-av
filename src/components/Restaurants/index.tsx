@@ -13,10 +13,7 @@ export const Restaurants = () => {
         activeId={activeRestaurantId}
         onClick={setActiveRestaurantId}
       />
-      <Restaurant
-        {...getItemById(activeRestaurantId, RESTAURANTS)}
-        key={activeRestaurantId}
-      />
+      <Restaurant {...getItemById(activeRestaurantId, RESTAURANTS)} />
     </>
   )
 }

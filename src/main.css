@@ -27,13 +27,13 @@ li {
   justify-content: flex-end;
   align-items: center;
 }
-.counter .button:not(first-child) {
+.counter button:not(first-child) {
   margin-left: 10px;
 }
-.button {
+button {
   margin: 10px 10px 10px 0;
 }
-.button,
+button,
 .resarant-tab,
 .active-resarant-tab {
   cursor: pointer;
@@ -69,6 +69,6 @@ li {
 .review-form .counter {
   justify-content: unset;
 }
-.review-form .button {
+.review-form button {
   display: block;
 }

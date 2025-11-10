@@ -1,14 +1,22 @@
 import { type CounterProps } from '../types'
-import { Button } from '.'
+
+const MAX_QUANITITY = 5
+const MIN_QUANITITY = 0
 
 export const Counter = ({
   count = 0,
+  max = MAX_QUANITITY,
+  min = MIN_QUANITITY,
   increase,
-  decrease = () => {},
+  decrease,
 }: CounterProps) => (
   <div className="counter">
-    <Button value="-" onClick={decrease} />
+    <button onClick={decrease} disabled={count <= min}>
+      -
+    </button>
     <span>{count}</span>
-    <Button value="+" onClick={increase} />
+    <button onClick={increase} disabled={count >= max}>
+      +
+    </button>
   </div>
 )

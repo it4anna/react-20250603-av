@@ -10,11 +10,8 @@ const getNewPercents = () => {
 export const useProgress = () => {
   const [percents, setPercents] = useState('0%')
 
-  const onScroll = () => {
-    setPercents(getNewPercents())
-  }
-
   useEffect(() => {
+    const onScroll = () => setPercents(getNewPercents())
     window.addEventListener('scroll', onScroll)
 
     return () => window.removeEventListener('scroll', onScroll)

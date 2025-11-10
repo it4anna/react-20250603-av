@@ -3,11 +3,11 @@ import { RESTAURANTS } from '../../utils/constants'
 
 export const RestaurantButtons = ({ activeId, onClick }: RestaurantTabsProps) =>
   RESTAURANTS.map(({ id, name }: RestaurantProps) => (
-    <h2
+    <button
       className={`${id === activeId ? 'active-' : ''}resarant-tab`}
       onClick={() => onClick(id)}
       key={id}
     >
       {name}
-    </h2>
+    </button>
   ))

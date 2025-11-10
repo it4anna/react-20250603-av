@@ -1,4 +1,4 @@
-import { useProgress } from '../hooks/useProgress'
+import { useProgress } from './useProgress'
 
 export const ScrollProgressBar = () => {
   const width = useProgress()
