@@ -1,12 +1,21 @@
-import {Button} from './Button'
-import {Layout} from './Layout'
-import {Menu} from './Menu'
-import {MenuLi} from './Menu/MenuLi'
-import {MenuLiQuantityBar} from './Menu/MenuLiQuantityBar'
-import {Restaurant} from './Restaurant'
-import {RestaurantButtons} from './RestaurantButtons'
-import {Restaurants} from './Restaurants'
-import {Review} from './Review'
-import {Reviews} from './Reviews'
+import { Layout } from './Layout'
+import { Menu } from './Menu'
+import { Counter } from './Counter'
+import { MenuLi } from './Menu/MenuLi'
+import { MenuLiCounter } from './Menu/MenuLiCounter'
+import { Restaurants } from './Restaurants'
+import { Reviews } from './Reviews'
+import { ReviewForm } from './ReviewForm'
+import { ScrollProgressBar } from './ScrollProgressBar'
 
-export {Button, Layout, Menu, MenuLi, MenuLiQuantityBar, Restaurant, RestaurantButtons, Restaurants, Review, Reviews}
+export {
+  Layout,
+  Menu,
+  MenuLi,
+  MenuLiCounter,
+  Counter,
+  Restaurants,
+  Reviews,
+  ReviewForm,
+  ScrollProgressBar,
+}

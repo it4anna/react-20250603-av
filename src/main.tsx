@@ -1,6 +1,6 @@
-import {StrictMode} from 'react'
-import {createRoot} from 'react-dom/client'
-import {Layout, Restaurants} from './components'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { Layout, Restaurants, ScrollProgressBar } from './components'
 import './main.css'
 
 // Linter: what settings to use? Didnt get about learning project settings
@@ -8,7 +8,74 @@ import './main.css'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Layout>
+      <ScrollProgressBar />
       <Restaurants />
-   </Layout>
-   </StrictMode>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </Layout>
+  </StrictMode>,
 )

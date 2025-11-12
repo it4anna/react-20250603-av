@@ -1,23 +1,39 @@
 #root {
   margin: 40px;
 }
+.scroll-progress-bar {
+  position: fixed;
+  top: 0px;
+  margin-left: -48px;
+  height: 4px;
+  background-color: red;
+  transition: width 0.5s ease-in-out;
+}
 footer {
   display: flex;
+  margin-left: -40px;
   align-content: center;
 }
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 0 10px 0
+  margin: 0 10px 0;
 }
 li {
   list-style-type: none;
 }
-.dish-buttons {
+.counter {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
-.button,
+.counter button:not(first-child) {
+  margin-left: 10px;
+}
+button {
+  margin: 10px 10px 10px 0;
+}
+button,
 .resarant-tab,
 .active-resarant-tab {
   cursor: pointer;
@@ -26,13 +42,16 @@ li {
 .active-resarant-tab {
   display: inline-flex;
   justify-content: space-between;
-  width:200px;
+  width: 200px;
+  color: rgb(73, 72, 72);
   margin: 5px;
-  color:rgb(73, 72, 72);
   cursor: pointer;
   border: solid 2px grey;
   box-shadow: 4px 4px 5px -2px rgba(0, 0, 0, 0.5);
-  transition: border 2s, background-color 1s, color 2s;
+  transition:
+    border 2s,
+    background-color 1s,
+    color 2s;
 }
 .active-resarant-tab {
   border: solid 2px rgb(70, 69, 69);
@@ -47,7 +66,9 @@ li {
 .resarant-tab:hover {
   background-color: rgb(204 204 204);
 }
-.button {
-  width: 70px;
-  margin: 0 10px 0
+.review-form .counter {
+  justify-content: unset;
+}
+.review-form button {
+  display: block;
 }

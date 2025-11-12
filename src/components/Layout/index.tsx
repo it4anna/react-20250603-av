@@ -1,12 +1,10 @@
-import {Header} from './Header'
-import {Footer} from './Footer'
+import { Header } from './Header'
+import { Footer } from './Footer'
 
-export const Layout = ({children}: any) => (
-<>
+export const Layout = ({ children }: any) => (
+  <>
     <Header />
-    <body>
-      {children}
-    </body>
+    <div>{children}</div>
     <Footer />
-</>
+  </>
 )
