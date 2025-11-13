@@ -14,7 +14,7 @@ export const ReviewForm = () => {
   const { user, text, rating } = review
 
   return (
-    <form className="review-form">
+    <div className="review-form">
       <h3>Create review:</h3>
       <label>Name:</label>
       <input value={user} onChange={(e) => onUserUpdate(e.target.value)} />
@@ -24,7 +24,6 @@ export const ReviewForm = () => {
         increase={increaseRating}
       />
       <textarea
-        name="text"
         rows={5}
         cols={30}
         placeholder={REVIEW_PLACEHOLDER}
@@ -32,6 +31,6 @@ export const ReviewForm = () => {
         onChange={(e) => onTextUpdate(e.target.value)}
       />
       <button onClick={onReset}>Reset</button>
-    </form>
+    </div>
   )
 }

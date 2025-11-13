@@ -8,7 +8,7 @@ export const Restaurant = ({ name, menu, reviews }: RestaurantProps) => {
       <h3>{name}</h3>
       <Menu menu={menu} />
       <Reviews reviews={reviews} />
-      <ReviewForm />
+      <ReviewForm key={name} />
     </>
   )
 }

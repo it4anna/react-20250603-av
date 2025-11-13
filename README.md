@@ -44,7 +44,6 @@
 реализовать scroll progress - https://www.cssscript.com/demo/scroll-progress-bar/
 https://react.dev/learn/preserving-and-resetting-state прочитать статью
 
-
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
