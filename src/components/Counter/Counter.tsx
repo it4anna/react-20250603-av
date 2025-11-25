@@ -1,4 +1,6 @@
-import { type CounterProps } from '../types'
+import classNames from 'classnames'
+import { type CounterProps } from '../../types'
+import styles from './Counter.module.css'
 
 const MAX_QUANITITY = 5
 const MIN_QUANITITY = 0
@@ -9,8 +11,9 @@ export const Counter = ({
   min = MIN_QUANITITY,
   increase,
   decrease,
+  customeStyle,
 }: CounterProps) => (
-  <div className="counter">
+  <div className={classNames(styles.counter, { [customeStyle]: customeStyle })}>
     <button onClick={decrease} disabled={count <= min}>
       -
     </button>

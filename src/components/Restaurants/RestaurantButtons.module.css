@@ -1,0 +1,25 @@
+.restarantButtons {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 200px;
+  color: rgb(73, 72, 72);
+  margin: 5px;
+  cursor: pointer;
+  border: solid 2px grey;
+  box-shadow: 4px 4px 5px -2px rgba(0, 0, 0, 0.5);
+  transition:
+    border 2s,
+    background-color 1s,
+    color 2s;
+}
+.active.restarantButtons {
+  border: solid 2px rgb(70, 69, 69);
+  background-color: grey;
+  color: white;
+}
+.restarantButtons:hover {
+  border: solid 2px rgb(73, 72, 72);
+  box-shadow: 6px 6px 7px -2px rgba(0, 0, 0, 0.5);
+  background-color: rgb(204 204 204);
+}

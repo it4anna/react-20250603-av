@@ -1,0 +1,9 @@
+.counter {
+  justify-content: unset;
+}
+.button {
+  display: block;
+}
+.counter button:first-child {
+  margin-left: unset !important;
+}

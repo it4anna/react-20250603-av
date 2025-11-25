@@ -1,6 +1,7 @@
 import { Counter } from '..'
 import { REVIEW_PLACEHOLDER } from '../../utils/constants'
 import { useReviewForm } from './useReviewForm'
+import styles from './ReviewForm.module.css'
 
 export const ReviewForm = () => {
   const {
@@ -19,6 +20,7 @@ export const ReviewForm = () => {
       <label>Name:</label>
       <input value={user} onChange={(e) => onUserUpdate(e.target.value)} />
       <Counter
+        customeStyle={styles.counter}
         count={rating}
         decrease={decreaseRating}
         increase={increaseRating}
@@ -30,7 +32,9 @@ export const ReviewForm = () => {
         value={text}
         onChange={(e) => onTextUpdate(e.target.value)}
       />
-      <button onClick={onReset}>Reset</button>
+      <button className={styles.button} onClick={onReset}>
+        Reset
+      </button>
     </div>
   )
 }
