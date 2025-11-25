@@ -1,6 +1,6 @@
 import { type MenuLiProps } from '../../types'
 import { toCapitalize } from '../../utils/helpers'
-import { MenuLiCounter } from '../'
+import { MenuLiCounter } from './MenuLiCounter'
 
 export const MenuLi = ({ name, price, ingredients }: MenuLiProps) => (
   <li>
