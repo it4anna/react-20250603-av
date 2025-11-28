@@ -40,6 +40,7 @@ export interface CounterProps {
   decrease: any
   max?: number
   min?: number
+  customeStyle?: any
 }
 export interface ReviewFormProps {
   value?: number

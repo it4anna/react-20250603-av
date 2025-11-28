@@ -1,5 +1,5 @@
 import { type MenuProps, type MenuLiProps } from '../../types'
-import { MenuLi } from '..'
+import { MenuLi } from './MenuLi'
 
 export const Menu = ({ menu }: MenuProps) => (
   <>
