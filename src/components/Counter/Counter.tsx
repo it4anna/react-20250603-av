@@ -13,7 +13,7 @@ export const Counter = ({
   decrease,
   customeStyle,
 }: CounterProps) => (
-  <div className={classNames(styles.counter, { [customeStyle]: customeStyle })}>
+  <div className={classNames(styles.counter, customeStyle)}>
     <button onClick={decrease} disabled={count <= min}>
       -
     </button>

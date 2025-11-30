@@ -23,7 +23,6 @@ export interface RestaurantProps {
   name: string
   menu: MenuLiProps[]
   reviews: ReviewProps[]
-  key: string
 }
 export interface RestaurantTabsProps {
   activeId: string
@@ -40,7 +39,7 @@ export interface CounterProps {
   decrease: any
   max?: number
   min?: number
-  customeStyle?: any
+  customeStyle?: string
 }
 export interface ReviewFormProps {
   value?: number
