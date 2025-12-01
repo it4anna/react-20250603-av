@@ -5,6 +5,6 @@ export const Layout = ({ children }: any) => (
   <>
     <Header />
     <div>{children}</div>
-    <Footer />
+    <Footer>Vostrykova©</Footer>
   </>
 )

@@ -13,9 +13,9 @@ const reducer = (state: any, { type, payload }: actionProps) => {
     case SET_USER_UPDATE_ACTION:
       return { ...state, user: payload }
     case SET_DECREASE_RATING_ACTION:
-      return { ...state, rating: --state.rating }
+      return { ...state, rating: state.rating - 1 }
     case SET_INCREASE_RATING_ACTION:
-      return { ...state, rating: ++state.rating }
+      return { ...state, rating: state.rating + 1 }
     case SET_TEXT_UPDATE_ACTION:
       return { ...state, text: payload }
     case SET_RESET_ACTION:
