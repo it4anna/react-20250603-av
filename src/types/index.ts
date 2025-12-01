@@ -1,3 +1,5 @@
+import type { Component } from "react"
+
 export interface MenuLiProps {
   id: string
   name: string
@@ -23,7 +25,6 @@ export interface RestaurantProps {
   name: string
   menu: MenuLiProps[]
   reviews: ReviewProps[]
-  key: string
 }
 export interface RestaurantTabsProps {
   activeId: string
@@ -40,6 +41,7 @@ export interface CounterProps {
   decrease: any
   max?: number
   min?: number
+  customeStyle?: string
 }
 export interface ReviewFormProps {
   value?: number
@@ -48,3 +50,13 @@ export interface actionProps {
   type: string
   payload?: string
 }
+export interface providerProps {
+  children: any
+}
+export interface buttonProps {
+  onClick: Function
+  children: string
+  className?: string
+  disabled?: boolean
+}
+

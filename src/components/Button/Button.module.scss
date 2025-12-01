@@ -1,0 +1,11 @@
+@import '../../variables';
+
+.light {
+    background-color: $light;
+    color: $dark;
+}
+
+.dark {
+    background-color: $grey;
+    color: $light;
+}

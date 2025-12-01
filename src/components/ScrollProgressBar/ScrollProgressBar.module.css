@@ -1,0 +1,8 @@
+.scrollProgressBar {
+  position: fixed;
+  top: 0px;
+  margin-left: -48px;
+  height: 4px;
+  background-color: red;
+  transition: width 0.5s ease-in-out;
+}
