@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 export const useCount = (initialState: number) => {
   const [count, setCount] = useState(initialState)
-  const increase = () => setCount(count + 1)
-  const decrease = () => setCount(count - 1)
+  const increase = useCallback(() => setCount(count + 1), [setCount, count])
+  const decrease = useCallback(() => setCount(count - 1), [setCount, count])
 
   return { count, increase, decrease }
 }
