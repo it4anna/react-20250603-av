@@ -12,33 +12,8 @@ createRoot(document.getElementById('root')!).render(
         <Layout>
           <ScrollProgressBar />
           <Restaurants />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
         </Layout>
       </UserContextProvider>
     </ThemeContextProvider>
-  </StrictMode>,
+  </StrictMode>
 )

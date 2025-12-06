@@ -1,11 +1,14 @@
 import { Button } from '../Button/Button'
 import { useUser } from './useUser'
 import styles from './LoginButton.module.scss'
-import { useLoginLabel } from './useLoginLabel'
+import { useMemo } from 'react'
 
 export const LoginButton = () => {
   const { userName, toggleUserName } = useUser()
-  const label = useLoginLabel('Login')
+  // Question: for case with heawy calculation, but for this example is it oveengeneering?
+  // const label = useMemo(()=> !userName ? 'Login' : 'Loout', [userName])
+
+  const label = !userName ? 'Login' : 'Loout'
 
   return (
     <div className={styles.LogginButton}>

@@ -3,7 +3,6 @@ import type { buttonProps } from '../../types'
 import { useTheme } from '../ThemeToggle/useTheme'
 import styles from './Button.module.scss'
 
-
 //  Не было время переделать, чтоб все кнопки в приложенни использовали этот компонент, сделаю следующими  PR
 export const Button = ({
   onClick,
