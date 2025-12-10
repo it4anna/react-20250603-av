@@ -1,7 +1,9 @@
 import { Counter } from '..'
 import { REVIEW_PLACEHOLDER } from '../../utils/constants'
 import { useReviewForm } from './useReviewForm'
-import styles from './ReviewForm.module.css'
+import styles from './ReviewForm.module.scss'
+import { Button } from '../Button/Button'
+import { useUser } from '../LoginButton/useUser'
 
 export const ReviewForm = () => {
   const {
@@ -13,6 +15,9 @@ export const ReviewForm = () => {
     onReset,
   } = useReviewForm()
   const { user, text, rating } = review
+  const { userName } = useUser()
+
+  if (!userName) return ''
 
   return (
     <div className="review-form">
@@ -32,9 +37,9 @@ export const ReviewForm = () => {
         value={text}
         onChange={(e) => onTextUpdate(e.target.value)}
       />
-      <button className={styles.button} onClick={onReset}>
+      <Button onClick={onReset} className={styles.button}>
         Reset
-      </button>
+      </Button>
     </div>
   )
 }

@@ -1,0 +1,13 @@
+@import '../../variables';
+
+.restaurantsContainer {
+  padding: 40px;
+}
+.light {
+  color: $light;
+  background-color: $dark;
+}
+
+.dark {
+  color: $dark;
+}

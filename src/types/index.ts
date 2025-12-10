@@ -5,6 +5,7 @@ export interface MenuLiProps {
   ingredients: string[]
   key: string
 }
+
 export interface ReviewProps {
   id: string
   user: string
@@ -12,27 +13,33 @@ export interface ReviewProps {
   rating: any
   key: string
 }
+
 export interface MenuProps {
   menu: MenuLiProps[]
 }
+
 export interface ReviewsProps {
   reviews: ReviewProps[]
 }
+
 export interface RestaurantProps {
   id: string
   name: string
   menu: MenuLiProps[]
   reviews: ReviewProps[]
 }
+
 export interface RestaurantTabsProps {
   activeId: string
   onClick: any
 }
+
 export interface MenuLiCounterProps {
   name?: string
   value?: number
   onChange?: any
 }
+
 export interface CounterProps {
   count: number
   increase: any
@@ -41,10 +48,23 @@ export interface CounterProps {
   min?: number
   customeStyle?: string
 }
+
 export interface ReviewFormProps {
   value?: number
 }
+
 export interface actionProps {
   type: string
   payload?: string
+}
+
+export interface providerProps {
+  children: any
+}
+
+export interface buttonProps {
+  onClick: Function
+  children: string
+  className?: string
+  disabled?: boolean
 }
