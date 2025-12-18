@@ -1,5 +1,5 @@
-import { Button } from '../Button/Button'
-import { useTheme } from './useTheme'
+import { Button } from '../../components'
+import { useTheme } from '../../app/hooks'
 import styles from './ThemeToggleButton.module.scss'
 
 export const ThemeToggleButton = () => {

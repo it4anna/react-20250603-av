@@ -1,6 +1,6 @@
 import { Header } from './Header'
 import { Footer } from './Footer'
-import { useTheme } from '../ThemeToggle/useTheme'
+import { useTheme } from '../../app/hooks'
 import styles from './Layout.module.scss'
 import classNames from 'classnames'
 

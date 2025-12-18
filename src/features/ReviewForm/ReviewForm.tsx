@@ -1,10 +1,10 @@
-import { Counter } from '..'
-import { REVIEW_PLACEHOLDER } from '../../utils/constants'
+import { Counter } from '../../components'
+import { Button } from '../../components'
 import { useReviewForm } from './useReviewForm'
 import styles from './ReviewForm.module.scss'
-import { Button } from '../Button/Button'
-import { useUser } from '../LoginButton/useUser'
+import { useAuthorization } from '../../app/hooks'
 
+const REVIEW_PLACEHOLDER = 'Share details of your own experience at this place'
 export const ReviewForm = () => {
   const {
     review,
@@ -15,7 +15,7 @@ export const ReviewForm = () => {
     onReset,
   } = useReviewForm()
   const { user, text, rating } = review
-  const { userName } = useUser()
+  const { userName } = useAuthorization()
 
   if (!userName) return ''
 

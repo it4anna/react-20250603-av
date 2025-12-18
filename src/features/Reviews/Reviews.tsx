@@ -1,4 +1,4 @@
-import { type ReviewsProps, type ReviewProps } from '../../types'
+import type { ReviewProps, ReviewsProps } from '../../types'
 import { Review } from './Review'
 
 export const Reviews = ({ reviews }: ReviewsProps) => (

@@ -3,15 +3,13 @@ export interface MenuLiProps {
   name: string
   price: any
   ingredients: string[]
-  key: string
 }
 
 export interface ReviewProps {
   id: string
-  user: string
+  userId: string
   text: string
   rating: any
-  key: string
 }
 
 export interface MenuProps {
@@ -25,16 +23,43 @@ export interface ReviewsProps {
 export interface RestaurantProps {
   id: string
   name: string
-  menu: MenuLiProps[]
-  reviews: ReviewProps[]
+  menu: string[]
+  reviews: string[]
+}
+
+export interface NormalizedRestaurantProps {
+  id: string
+  name: string
+  menu: string[]
+  reviews: string[]
+}
+
+export interface NormalizedMenuProps {
+  id: string
+  name: string
+  price: number
+  ingredients: string[]
+}
+
+export interface NormalizedReviewsProps {
+  id: string
+  userId: string
+  text: string
+  rating: number
+}
+
+export interface NormalizedUsersProps {
+  id: string
+  name: string
 }
 
 export interface RestaurantTabsProps {
-  activeId: string
+  activeId: string | null
   onClick: any
+  restaurants: any[]
 }
 
-export interface MenuLiCounterProps {
+export interface DishCounterProps {
   name?: string
   value?: number
   onChange?: any
@@ -67,4 +92,9 @@ export interface buttonProps {
   children: string
   className?: string
   disabled?: boolean
+}
+
+export interface CartItemProps {
+  id: string
+  quantity: number
 }
