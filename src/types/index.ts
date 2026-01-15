@@ -1,43 +1,66 @@
-export interface MenuLiProps {
+export interface DishProps {
   id: string
   name: string
-  price: any
-  ingredients: string[]
-  key: string
+  price: number
+  ingredients?: string[]
 }
 
 export interface ReviewProps {
   id: string
-  user: string
+  userId: string
   text: string
   rating: any
-  key: string
 }
 
 export interface MenuProps {
-  menu: MenuLiProps[]
+  dishesIds: String[]
 }
 
 export interface ReviewsProps {
-  reviews: ReviewProps[]
+  reviewsIds: string[]
 }
 
 export interface RestaurantProps {
   id: string
   name: string
-  menu: MenuLiProps[]
-  reviews: ReviewProps[]
+  menu: string[]
+  reviews: string[]
+}
+
+export interface NormalizedRestaurantProps {
+  id: string
+  name: string
+  menu: string[]
+  reviews: string[]
+}
+
+export interface NormalizedMenuProps {
+  id: string
+  name: string
+  price: number
+  ingredients: string[]
+}
+
+export interface NormalizedReviewsProps {
+  id: (string | number)
+  userId: string
+  text: string
+  rating: number
+}
+
+export interface NormalizedUsersProps {
+  id: string
+  name: string
 }
 
 export interface RestaurantTabsProps {
-  activeId: string
+  activeId: string | null
   onClick: any
+  restaurants: any[]
 }
 
-export interface MenuLiCounterProps {
-  name?: string
-  value?: number
-  onChange?: any
+export interface DishCounterProps {
+  id: string
 }
 
 export interface CounterProps {
@@ -67,4 +90,9 @@ export interface buttonProps {
   children: string
   className?: string
   disabled?: boolean
+}
+
+export interface CartItemProps {
+  id: string
+  name: string
 }

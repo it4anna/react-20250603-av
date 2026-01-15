@@ -1,19 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Layout, Restaurants, ScrollProgressBar } from './components'
-import { ThemeContextProvider } from './components/ThemeToggle/ThemeContextProvider'
+import App from './app/App'
 import './main.scss'
-import { UserContextProvider } from './components/LoginButton/UserContextProvider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeContextProvider>
-      <UserContextProvider>
-        <Layout>
-          <ScrollProgressBar />
-          <Restaurants />
-        </Layout>
-      </UserContextProvider>
-    </ThemeContextProvider>
-  </StrictMode>
+    <App />
+  </StrictMode>,
 )

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import type { buttonProps } from '../../types'
-import { useTheme } from '../ThemeToggle/useTheme'
+import { useTheme } from '../../app/hooks'
 import styles from './Button.module.scss'
 
 //  Не было время переделать, чтоб все кнопки в приложенни использовали этот компонент, сделаю следующими  PR

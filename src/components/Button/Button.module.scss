@@ -3,9 +3,11 @@
 .light {
   background-color: $light;
   color: $dark;
+  height: fit-content;
 }
 
 .dark {
   background-color: $grey;
   color: $light;
+  height: fit-content;
 }
