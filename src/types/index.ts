@@ -1,8 +1,8 @@
-export interface MenuLiProps {
+export interface DishProps {
   id: string
   name: string
-  price: any
-  ingredients: string[]
+  price: number
+  ingredients?: string[]
 }
 
 export interface ReviewProps {
@@ -13,11 +13,11 @@ export interface ReviewProps {
 }
 
 export interface MenuProps {
-  menu: MenuLiProps[]
+  dishesIds: String[]
 }
 
 export interface ReviewsProps {
-  reviews: ReviewProps[]
+  reviewsIds: string[]
 }
 
 export interface RestaurantProps {
@@ -42,7 +42,7 @@ export interface NormalizedMenuProps {
 }
 
 export interface NormalizedReviewsProps {
-  id: string
+  id: (string | number)
   userId: string
   text: string
   rating: number
@@ -60,9 +60,7 @@ export interface RestaurantTabsProps {
 }
 
 export interface DishCounterProps {
-  name?: string
-  value?: number
-  onChange?: any
+  id: string
 }
 
 export interface CounterProps {
@@ -96,5 +94,5 @@ export interface buttonProps {
 
 export interface CartItemProps {
   id: string
-  quantity: number
+  name: string
 }

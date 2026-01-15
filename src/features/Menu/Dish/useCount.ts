@@ -1,9 +1,18 @@
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
+import { useCart } from '../../../app/hooks'
 
-export const useCount = (initialState: number) => {
-  const [count, setCount] = useState(initialState)
-  const increase = useCallback(() => setCount(count + 1), [setCount, count])
-  const decrease = useCallback(() => setCount(count - 1), [setCount, count])
+export const useCount = (id: string) => {
+  const { upsertItem, getCartItemCountByID } = useCart()
+  const count = getCartItemCountByID(id)
+
+  const increase = useCallback(
+    () => upsertItem({ id, count: count + 1 || 2 }),
+    [count],
+  )
+  const decrease = useCallback(
+    () => upsertItem({ id, count: count - 1 || 0 }),
+    [count],
+  )
 
   return { count, increase, decrease }
 }

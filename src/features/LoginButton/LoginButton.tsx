@@ -3,8 +3,8 @@ import { useAuthorization } from '../../app/hooks'
 import styles from './LoginButton.module.scss'
 
 export const LoginButton = () => {
-  const { userName, toggleUserName } = useAuthorization()
-  const label = !userName ? 'Login' : 'Loout'
+  const { userName, isAuthorized, toggleUserName } = useAuthorization()
+  const label = !isAuthorized ? 'Login' : 'Loout'
 
   return (
     <div className={styles.LogginButton}>

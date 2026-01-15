@@ -1,10 +1,13 @@
-import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
-import type { NormalizedReviewsProps } from '../../types'
+import {
+  createEntityAdapter,
+  createSlice,
+  createSelector,
+} from '@reduxjs/toolkit'
+import type { NormalizedReviewsProps, RestaurantProps } from '../../types'
 import type { RootState } from '../../app/store'
 
 const ReviewsAdapter = createEntityAdapter<NormalizedReviewsProps>({
-  // Optional: Define how to get the ID if it's not 'id'
-  selectId: (restaurant) => restaurant.id,
+  selectId: (restaurant: RestaurantProps) => restaurant.id,
 })
 
 const initialState = {
@@ -20,11 +23,14 @@ export const reviewsSlice = createSlice({
 })
 
 export const { reviewsSetAll } = reviewsSlice.actions
-// Get selectors from the adapter
-export const { selectById } = ReviewsAdapter.getSelectors(
-  (state: RootState) => state.reviews,
-)
 
-export const selectReviewByIds = (state: RootState, ids: string[]) =>
-  ids.map((id: string) => selectById(state, id))
+export const { selectById } = ReviewsAdapter.getSelectors((state: RootState) => state.reviews,)
+
+export const makeSelectReviewsByIds = (ids: string[]) =>
+  createSelector(
+    (state: RootState) => state.reviews.entities,
+    (entities) =>
+      ids.map((id) => entities[id]).filter(Boolean) as NormalizedReviewsProps[],
+  )
+
 export default reviewsSlice.reducer

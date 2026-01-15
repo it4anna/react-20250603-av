@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useMemo, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThemeContext } from '../features/ThemeToggle/ThemeContext'
 import { UserContext } from '../features/LoginButton/UserContext'
@@ -11,14 +11,21 @@ import {
 } from '../features/Restaurants/restaurantsSlice'
 import {
   dishesSetAll,
-  selectDishByIds,
+  makeSelectDishesByIds,
+  makeSelectDishById,
 } from '../features/Menu/Dish/dishesSlice'
 import {
-  selectReviewByIds,
   reviewsSetAll,
+  makeSelectReviewsByIds,
 } from '../features/Reviews/reviewsSlice'
 import { userSetAll, selectUserById } from '../features/LoginButton/usersSlice'
-import { selectCart, updateCartItem } from '../features/Cart/cartSlice'
+import {
+  selectIds,
+  upsertOrRemoveCartItem,
+  selectCartItemCountById,
+  selectCartItemById,
+  selectCartTotal,
+} from '../features/Cart/cartSlice'
 import type {
   NormalizedMenuProps,
   NormalizedRestaurantProps,
@@ -31,12 +38,19 @@ export const useTheme = () => useContext(ThemeContext)
 export const useAuthorization = () => useContext(UserContext)
 export const useRestaurants = () => {
   const dispatch = useDispatch()
-  const setActiveId = (id: String) => dispatch(setActiveRestaurantId(id))
   const addRestaurants = (payload: NormalizedRestaurantProps[]) =>
     dispatch(restaurantsSetAll(payload))
   const restaurants = useSelector(selectAll)
   const activeRestaurantId = useSelector(selectActiveRestaurantId)
   const activeRestaurant = useSelector(selectActiveRestaurant)
+
+  const setActiveId = useCallback(
+    (id: string | null) => {
+      if (id === activeRestaurantId) return
+      dispatch(setActiveRestaurantId(id))
+    },
+    [dispatch, activeRestaurantId],
+  )
 
   return {
     restaurants,
@@ -50,17 +64,26 @@ export const useDishes = () => {
   const dispatch = useDispatch()
   const addAllDishes = (payload: NormalizedMenuProps[]) =>
     dispatch(dishesSetAll(payload))
-  const getDishByIds = (ids: string) =>
-    useSelector((state) => selectDishByIds(state, ids))
-  return { addAllDishes, getDishByIds }
+  const getDishesByIds = (ids: (string | number)[]) => {
+    const selectDishes = useMemo(() => makeSelectDishesByIds(ids), [ids])
+    return useSelector(selectDishes)
+  }
+  const getDishById = (id: string) => {
+    const selectDish = useMemo(() => makeSelectDishById(id), [id])
+    return useSelector(selectDish)
+  }
+
+  return { addAllDishes, getDishesByIds, getDishById }
 }
 
 export const useReviews = () => {
   const dispatch = useDispatch()
   const addAllReviews = (payload: NormalizedReviewsProps[]) =>
     dispatch(reviewsSetAll(payload))
-  const getReviewsByIds = (ids: string) =>
-    useSelector((state) => selectReviewByIds(state, ids))
+  const getReviewsByIds = (ids: string[]) => {
+    const selectReviews = useMemo(() => makeSelectReviewsByIds(ids), [ids])
+    return useSelector(selectReviews)
+  }
   return { addAllReviews, getReviewsByIds }
 }
 
@@ -76,9 +99,20 @@ export const useUsers = () => {
 
 export const useCart = () => {
   const dispatch = useDispatch()
-  const updateItem = (payload: CartItemProps) =>
-    dispatch(updateCartItem(payload))
-  const getCart = useSelector(selectCart)
+  const upsertItem = (payload: CartItemProps) =>
+    dispatch(upsertOrRemoveCartItem(payload))
+  const getCartItemByID = (id: string) =>
+    useSelector((state) => selectCartItemById(state, id))
+  const getCartItemCountByID = (id: string) =>
+    useSelector((state) => selectCartItemCountById(state, id))
+  const cartIds = useSelector(selectIds)
+  const cartTotal = useSelector(selectCartTotal)
 
-  return { getCart, updateItem }
+  return {
+    upsertItem,
+    getCartItemCountByID,
+    getCartItemByID,
+    cartIds,
+    cartTotal,
+  }
 }

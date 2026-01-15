@@ -14,6 +14,7 @@ export const Layout = ({ children }: any) => {
       })}
     >
       <Header />
+      <h1>Restaurants:</h1>
       <div>{children}</div>
       <Footer>Vostrykova©</Footer>
     </div>

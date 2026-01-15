@@ -3,13 +3,12 @@ import type { RootState } from '../../app/store'
 import type { RestaurantProps } from '../../types'
 
 const restaurantsAdapter = createEntityAdapter<RestaurantProps>({
-  // Optional: Define how to get the ID if it's not 'id'
   selectId: (restaurant) => restaurant.id,
 })
 
 const initialState = {
-  ...restaurantsAdapter.getInitialState(), // { ids: [], entities: {} }
-  activeRestaurantId: null, // Add your selected ID state
+  ...restaurantsAdapter.getInitialState(),
+  activeRestaurantId: null,
 }
 
 export const restaurantsSlice = createSlice({
@@ -23,15 +22,14 @@ export const restaurantsSlice = createSlice({
   },
 })
 
-export const { setActiveRestaurantId, restaurantsSetAll } =
-  restaurantsSlice.actions
-// Get selectors from the adapter
+export const { setActiveRestaurantId, restaurantsSetAll } = restaurantsSlice.actions
+
 export const { selectAll, selectById: selectRestaurantById } =
-  restaurantsAdapter.getSelectors((state: RootState) => state.restaurants) // Adjust RootState
-// Select the selected ID from the slice state
+  restaurantsAdapter.getSelectors((state: RootState) => state.restaurants)
+
 export const selectActiveRestaurantId = (state: RootState) =>
   state.restaurants.activeRestaurantId
-// Selector to get the full selected restaurant object
+
 export const selectActiveRestaurant = (state: RootState) => {
   const selectedId = selectActiveRestaurantId(state)
   return selectedId ? selectRestaurantById(state, selectedId) : null

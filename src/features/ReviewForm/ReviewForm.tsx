@@ -15,9 +15,9 @@ export const ReviewForm = () => {
     onReset,
   } = useReviewForm()
   const { user, text, rating } = review
-  const { userName } = useAuthorization()
+  const { isAuthorized } = useAuthorization()
 
-  if (!userName) return ''
+  if (!isAuthorized) return ''
 
   return (
     <div className="review-form">

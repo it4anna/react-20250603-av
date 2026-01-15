@@ -33,7 +33,6 @@ export const Restaurants = () => {
     addAllUsers(normalizedUsers)
     setActiveId(normalizedRestaurants[0].id)
   }, [])
-
   return (
     <>
       <RestaurantButtons

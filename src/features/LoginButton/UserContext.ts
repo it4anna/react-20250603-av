@@ -1,3 +1,13 @@
 import { createContext } from 'react'
 
-export const UserContext = createContext('')
+export type UserContextShape = {
+  userName: string
+  isAuthorized: boolean
+  toggleUserName: () => void
+}
+
+export const UserContext = createContext<UserContextShape>({
+  userName: '',
+  isAuthorized: false,
+  toggleUserName: () => {},
+})

@@ -1,14 +1,17 @@
-import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
-import type { NormalizedMenuProps } from '../../../types'
+import {
+  createEntityAdapter,
+  createSlice,
+  createSelector,
+} from '@reduxjs/toolkit'
+import type { DishProps, NormalizedMenuProps } from '../../../types'
 import type { RootState } from '../../../app/store'
 
 const dishesAdapter = createEntityAdapter<NormalizedMenuProps>({
-  // Optional: Define how to get the ID if it's not 'id'
-  selectId: (restaurant) => restaurant.id,
+  selectId: (dish: DishProps) => dish.id,
 })
 
 const initialState = {
-  ...dishesAdapter.getInitialState(), // { ids: [], entities: {} }
+  ...dishesAdapter.getInitialState(),
 }
 
 export const dishesSlice = createSlice({
@@ -20,11 +23,23 @@ export const dishesSlice = createSlice({
 })
 
 export const { dishesSetAll } = dishesSlice.actions
-// Get selectors from the adapter
+
 export const { selectById } = dishesAdapter.getSelectors(
   (state: RootState) => state.dishes,
 )
-export const selectDishByIds = (state: RootState, ids: string[]) =>
-  ids.map((id: string) => selectById(state, id))
+
+export const makeSelectDishById = (id: string) => (
+  createSelector(
+    (state: RootState) => state.dishes?.entities || {},
+    (entities) => entities[id] || null,
+  )
+)
+
+export const makeSelectDishesByIds = (ids: (string | number)[]) =>
+  createSelector(
+    (state: RootState) => state.dishes.entities,
+    (entities) =>
+      ids.map((id) => entities[id]).filter(Boolean) as NormalizedMenuProps[],
+  )
 
 export default dishesSlice.reducer
